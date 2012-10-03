@@ -1,25 +1,8 @@
-<h1>Listing tasks</h1>
+<div id="tasks"></div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.title %></td>
-    <td><%= task.content %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Task', new_task_path %>
+<script type="text/javascript">
+  $(function() {
+    window.router = new Todolist.Routers.TasksRouter({tasks: <%= @tasks.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>
