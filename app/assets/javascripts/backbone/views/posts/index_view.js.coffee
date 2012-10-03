@@ -1,6 +1,6 @@
-Todo.Views.Posts ||= {}
+Todolist.Views.Posts ||= {}
 
-class Todo.Views.Posts.IndexView extends Backbone.View
+class Todolist.Views.Posts.IndexView extends Backbone.View
   template: JST["backbone/templates/posts/index"]
 
   initialize: () ->
@@ -10,7 +10,7 @@ class Todo.Views.Posts.IndexView extends Backbone.View
     @options.posts.each(@addOne)
 
   addOne: (post) =>
-    view = new Todo.Views.Posts.PostView({model : post})
+    view = new Todolist.Views.Posts.PostView({model : post})
     @$("tbody").append(view.render().el)
 
   render: =>

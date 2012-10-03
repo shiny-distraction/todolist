@@ -1,10 +1,10 @@
-class Todo.Models.Post extends Backbone.Model
+class Todolist.Models.Post extends Backbone.Model
   paramRoot: 'post'
 
   defaults:
     title: null
     content: null
 
-class Todo.Collections.PostsCollection extends Backbone.Collection
-  model: Todo.Models.Post
+class Todolist.Collections.PostsCollection extends Backbone.Collection
+  model: Todolist.Models.Post
   url: '/posts'

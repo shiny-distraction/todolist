@@ -1,6 +1,6 @@
-class Todo.Routers.PostsRouter extends Backbone.Router
+class Todolist.Routers.PostsRouter extends Backbone.Router
   initialize: (options) ->
-    @posts = new Todo.Collections.PostsCollection()
+    @posts = new Todolist.Collections.PostsCollection()
     @posts.reset options.posts
 
   routes:
@@ -11,21 +11,21 @@ class Todo.Routers.PostsRouter extends Backbone.Router
     ".*"        : "index"
 
   newPost: ->
-    @view = new Todo.Views.Posts.NewView(collection: @posts)
+    @view = new Todolist.Views.Posts.NewView(collection: @posts)
     $("#posts").html(@view.render().el)
 
   index: ->
-    @view = new Todo.Views.Posts.IndexView(posts: @posts)
+    @view = new Todolist.Views.Posts.IndexView(posts: @posts)
     $("#posts").html(@view.render().el)
 
   show: (id) ->
     post = @posts.get(id)
 
-    @view = new Todo.Views.Posts.ShowView(model: post)
+    @view = new Todolist.Views.Posts.ShowView(model: post)
     $("#posts").html(@view.render().el)
 
   edit: (id) ->
     post = @posts.get(id)
 
-    @view = new Todo.Views.Posts.EditView(model: post)
+    @view = new Todolist.Views.Posts.EditView(model: post)
     $("#posts").html(@view.render().el)

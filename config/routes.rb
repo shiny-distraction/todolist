@@ -1,4 +1,4 @@
-Todo::Application.routes.draw do
+Todolist::Application.routes.draw do
   resources :tasks
 
   resources :posts

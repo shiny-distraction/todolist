@@ -1,6 +1,6 @@
-Todo.Views.Posts ||= {}
+Todolist.Views.Posts ||= {}
 
-class Todo.Views.Posts.EditView extends Backbone.View
+class Todolist.Views.Posts.EditView extends Backbone.View
   template : JST["backbone/templates/posts/edit"]
 
   events :
