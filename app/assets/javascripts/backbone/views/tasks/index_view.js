@@ -10,7 +10,7 @@ Todolist.Views.Tasks.IndexView = Backbone.View.extend({
     },
 
     addAll: function() {
-        this.options.tasks.each(this.addOne);
+        this.options.tasks.each(this.addOne, this);
     },
 
 
